@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandra KENFACK | Ingénieure Systèmes & Réseaux</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #007bff; /* Bleu professionnel moderne */
+            --secondary-color: #6c757d; /* Gris neutre pour contraste */
+            --accent-color: #28a745; /* Vert pour accent positif */
+            --bg-light: #f8f9fa; /* Fond clair pour lisibilité */
+            --text-dark: #212529; /* Texte sombre pour contraste élevé */
+            --text-light: #ffffff; /* Texte clair pour headers */
+        }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text-dark); 
+            margin: 0; 
+            background: var(--bg-light); 
+            font-size: 16px; /* Taille de police de base pour meilleure lisibilité */
+        }
+        header { 
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); 
+            color: var(--text-light); 
+            padding: 4rem 1rem; 
+            text-align: center; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombre pour profondeur */
+        }
+        .container { 
+            max-width: 1200px; /* Largeur augmentée pour plus d'espace */
+            margin: auto; 
+            padding: 20px; 
+        }
+        .profile-links { 
+            margin-top: 20px; 
+        }
+        .profile-links a { 
+            color: var(--text-light); 
+            margin: 0 20px; 
+            text-decoration: none; 
+            font-size: 1.8rem; 
+            transition: all 0.3s ease; /* Transition fluide */
+            opacity: 0.8; 
+        }
+        .profile-links a:hover { 
+            color: var(--accent-color); 
+            opacity: 1; 
+            transform: scale(1.1); /* Effet de zoom au survol */
+        }
+        
+        .project-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 15px; /* Bordures plus arrondies pour modernité */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Ombre plus prononcée pour visibilité */
+            margin-bottom: 60px; 
+            border-left: 8px solid var(--accent-color); 
+            transition: transform 0.3s ease; /* Animation au survol */
+        }
+        .project-card:hover { 
+            transform: translateY(-5px); /* Léger soulèvement au survol */
+        }
+        .project-card.jas { 
+            border-left-color: var(--secondary-color); 
+        }
+        
+        h1, h2, h3 { 
+            color: var(--primary-color); 
+            margin-top: 0; 
+            font-weight: 700; /* Police plus épaisse pour titres */
+        }
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        
+        .tag { 
+            background: #e9ecef; 
+            color: var(--text-dark); 
+            padding: 8px 16px; 
+            border-radius: 25px; 
+            font-size: 0.9rem; 
+            margin-right: 10px; 
+            font-weight: 600; 
+            display: inline-block; 
+            margin-bottom: 15px; 
+            border: 1px solid #dee2e6; /* Bordure subtile pour définition */
+        }
+        .tag-tech { 
+            background: var(--accent-color); 
+            color: white; 
+        }
+        .tag-jas { 
+            background: var(--secondary-color); 
+            color: white; 
+        }
+        
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 30px 0; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Ombre légère pour table */
+        }
+        th, td { 
+            border: 1px solid #dee2e6; 
+            padding: 18px; 
+            text-align: left; 
+        }
+        th { 
+            background-color: #f8f9fa; 
+            font-weight: 700; 
+            color: var(--text-dark); 
+        }
+        .total-row { 
+            font-weight: bold; 
+            background-color: #fff3cd; /* Jaune pâle pour mise en évidence */
+            color: #856404; 
+        }
+        
+        .methodology { 
+            background: #e3f2fd; /* Bleu très clair pour contraste */
+            padding: 25px; 
+            border-radius: 10px; 
+            border-left: 5px solid var(--primary-color); 
+            font-style: italic; 
+            margin: 30px 0; 
+            font-size: 1.1rem; 
+        }
+        .btn-pdf { 
+            display: inline-block; 
+            background: var(--primary-color); 
+            color: white; 
+            padding: 12px 25px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            margin-top: 20px; 
+            font-weight: bold; 
+            transition: background 0.3s ease; 
+            box-shadow: 0 4px 8px rgba(0,123,255,0.3); /* Ombre colorée pour bouton */
+        }
+        .btn-pdf:hover { 
+            background: #0056b3; /* Bleu plus foncé au survol */
+            box-shadow: 0 6px 12px rgba(0,123,255,0.4); 
+        }
+        .footer { 
+            text-align: center; 
+            padding: 60px; 
+            color: #6c757d; 
+            background: white; 
+            border-top: 1px solid #dee2e6; 
+            font-size: 0.9rem; 
+        }
+        
+        /* Améliorations pour accessibilité et visibilité */
+        @media (max-width: 768px) { 
+            .container { padding: 10px; }
+            header { padding: 2rem 1rem; }
+            .project-card { padding: 25px; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sandra KENFACK DONGMO</h1>
+    <p>Ingénieure Systèmes et Réseaux | Experte en Infrastructure & Cybersécurité</p>
+    <div class="profile-links">
+        <a href="https://www.linkedin.com/in/sandra-kenfack-dongmo-48b8411a6" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Sandrakenfack" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+</header>
+
+<div class="container">
+
+    <section id="jas-consulting">
+        <div class="project-card jas">
+            <h2><i class="fas fa-server"></i> Migration de l'Infrastructure IT - JAS Consulting</h2>
+            <p><strong>Projet de mise en situation :</strong> Migration complète du Groupement Mutualiste.</p>
+            <div>
+                <span class="tag tag-jas">Audit & Conseil</span>
+                <span class="tag tag-jas">PCA/PRA</span>
+                <span class="tag tag-jas">Cloud Computing</span>
+                <span class="tag tag-jas">Cybersécurité</span>
+            </div>
+
+            <h3>Résumé du Projet</h3>
+            <p>Réalisation d'un dossier technique complet pour la migration de l'infrastructure IT. Ce projet inclut une veille technologique active, l'évaluation de solutions innovantes (IA et Automatisation) et la sécurisation des données sensibles.</p>
+
+            <ul>
+                <li><strong>Gestion de la continuité :</strong> Mise à jour et test du Plan de Continuité d'Activité (PCA) et de Reprise d'Activité (PRA).</li>
+                <li><strong>Sécurité :</strong> Planification de tests de pénétration annuels et audits de robustesse.</li>
+                <li><strong>Gouvernance :</strong> Pilotage de la clôture officielle du projet et validation des obligations contractuelles.</li>
+            </ul>
+
+            <div class="methodology">
+                "La réussite d'une migration réside dans l'anticipation des risques et la mise en place d'une résilience optimale face aux incidents majeurs."
+            </div>
+            <a href="file:///C:/Users/Sandra/Documents/Projets_EURL_2026/Documentation_Technique/JAS%20Consulting%20-%20Dossier%20Groupe%206%20-%20V3.pdf" class="btn-pdf" target="_blank"><i class="fas fa-file-pdf"></i> Consulter le Dossier Complet</a>
+        </div>
+    </section>
+
+    <section id="videosurveillance">
+        <div class="project-card">
+            <h2><i class="fas fa-shield-alt"></i> Système de Vidéosurveillance IP - ISA-DOUALA</h2>
+            <p><strong>Conception :</strong> Architecture de sécurité intelligente pour le campus.</p>
+            <div>
+                <span class="tag tag-tech">Réseaux IP</span>
+                <span class="tag tag-tech">ARCHICAD 3D</span>
+                <span class="tag tag-tech">Gestion de Projet</span>
+            </div>
+
+            <h3>Ingénierie Financière & Technique</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Poste</th>
+                        <th>Détails</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Matériel Vidéo</td><td>NVR Hikvision & Caméras Visortech</td><td>2 372 000 F</td></tr>
+                    <tr><td>Infrastructure</td><td>Onduleur, Baie 4U & Câblage SFTP</td><td>245 000 F</td></tr>
+                    <tr><td>Expertise</td><td>Configuration & Audit de sécurité</td><td>700 000 F</td></tr>
+                    <tr class="total-row">
+                        <td colspan="2">INVESTISSEMENT GLOBAL (TTC)</td>
+                        <td>3 938 000 F CFA</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="methodology">
+                "Allier l'esthétique du cahier des charges à la rigueur des tests d'implémentation pour garantir un plaisir incessant au maître d'ouvrage."
+            </div>
+            <a href="file:///C:/Users/Sandra/Documents/Projets_EURL_2026/Documentation_Technique/Rapport%20de%20fin%20de%20Travail%20Kenfack%20Sandra.pdf" class="btn-pdf" target="_blank"><i class="fas fa-file-pdf"></i> Lire le Rapport Technique</a>
+        </div>
+    </section>
+
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Sandra KENFACK DONGMO - Déployé via GitHub Pages</p>
+</div>
+
+</body>
+</html>
